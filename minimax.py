@@ -89,7 +89,7 @@ def board_filled(board):
 
 def over(board):
     for i in range(7):
-        for j in range(2):
+        for j in range(3):
             val = 0
             for k in range(4):
                 val += access(i, j+k, board)
@@ -102,6 +102,16 @@ def over(board):
                 val += access(i + k, j, board)
             if val == 4 or val == -4:
                 return val
+    for i in range(4):
+        for j in range(3):
+            val1 = val2 = 0
+            for k in range(4):
+                val1 += access(i+k, j+k, board)
+                val2 += access(6-k, j+k, board)
+            if abs(val1) == 4:
+                return val1
+            if abs(val2) == 4:
+                return val2
 
     return 0
 

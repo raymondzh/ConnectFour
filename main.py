@@ -20,7 +20,7 @@ def main():
             break
 
         print("Thinking...")
-        next_move = mm.minimax(-1, 4, board)
+        next_move = mm.minimax(-1, 1, board)
         sleep(2)
         mm.move(next_move % 7, -1, board) # fix
         display(board)
@@ -53,10 +53,10 @@ def display(board):
 def test():
     board = [0, 0, 0, 0, 0, 0, 0,
              0, 0, 0, 0, 0, 0, 0,
-             0, 0, 0, 0, 0, 0, 0,
-             0, 0, 0, 0, 0, 0, 0,
-             0, 0, 0, 0, 0, 0, 0,
-             0, 0, 0, 1, 1, 1, 1, ]
+             0, 0, 0, 1, 0, 0, 0,
+             0, 0, 0, 0, 1, 0, 0,
+             0, 0, 0, 0, 0, 1, 0,
+             0, 0, 0, 0, 0, 0, 1, ]
     print(mm.value(board))
 
 
